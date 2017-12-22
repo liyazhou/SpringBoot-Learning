@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping(value="/users")     // 通过这里配置使下面的映射都在/users下，可去除
 public class UserController {
 
+//    http://localhost:8080/swagger-ui.html
     static Map<Long, User> users = Collections.synchronizedMap(new HashMap<Long, User>());
 
     @ApiOperation(value="获取用户列表", notes="")
@@ -36,7 +37,7 @@ public class UserController {
     }
 
     @ApiOperation(value="获取用户详细信息", notes="根据url的id来获取用户详细信息")
-    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "Long")
+    @ApiImplicitParam(name = "id", value = "用户ID", required = true, dataType = "string", paramType = "path")
     @RequestMapping(value="/{id}", method=RequestMethod.GET)
     public User getUser(@PathVariable Long id) {
         return users.get(id);
