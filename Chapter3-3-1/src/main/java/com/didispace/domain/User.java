@@ -18,13 +18,14 @@ public class User {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false, length = 5)
+    @Column(nullable = false, length = 256)
     private String name;
 
     @Column(nullable = false)
     private Integer age;
 
-    public User(){}
+    public User() {
+    }
 
     public User(String name, Integer age) {
         this.name = name;
