@@ -8,7 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -22,7 +21,6 @@ public class ApplicationTests {
     private UserRepository userRepository;
 
     @Test
-    @Transactional
     public void test() throws Exception {
 
         // 创建10条记录
